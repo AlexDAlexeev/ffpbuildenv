@@ -1,1 +1,0 @@
-make VERBOSE=1
