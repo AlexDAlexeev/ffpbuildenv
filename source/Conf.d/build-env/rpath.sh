@@ -1,0 +1,7 @@
+RPATH=$CPREFIX/lib
+
+#export LD_LIBRARY_PATH=$CPREFIX/lib
+
+LDFLAGS_RPATH="-Wl,-rpath -Wl,$RPATH"
+export LDFLAGS="$LDFLAGS ${LDFLAGS_RPATH}"
+
