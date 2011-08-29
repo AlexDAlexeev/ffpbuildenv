@@ -234,6 +234,12 @@ for _f in $A; do
 			*.tar)
 				tar xf $f
 				;;
+			*.zip)
+				unzip $f
+				;;
+			*.gz)
+				gzip -cd $f > $(gzip -lN $f | tail -n 1| basename $(awk '{print $4}'))	
+				;;
 			*)
 				die "$(basename $f): Don't know how to unpack"
 				;;
