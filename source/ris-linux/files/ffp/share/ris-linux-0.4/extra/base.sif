@@ -1,0 +1,16 @@
+[data]
+floppyless = "1"
+msdosinitiated = "1"
+; Needed for second stage
+OriSrc = "\\SERVERNAME\SHARENAME\<setup_dir>\i386"
+OriTyp = "4"
+LocalSourceOnCD = 1
+DisableAdminAccountOnDomainJoin = 1
+[SetupData]
+OsLoadOptions = "/fastdetect"
+; Needed for first stage
+SetupSourceDevice = "\Device\LanmanRedirector\SERVERNAME\SHARENAME\<setup_dir>"
+[UserData]
+ComputerName = *
+; if needed
+;ProductID=

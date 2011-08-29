@@ -1,0 +1,1 @@
+make INSTALLROOT=$D install

@@ -1,0 +1,1 @@
+mv $WORKDIR/GeoIP-1.4.6  $WORKDIR/$P
