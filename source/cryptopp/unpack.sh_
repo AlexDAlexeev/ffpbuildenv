@@ -1,0 +1,5 @@
+mkdir $WORKDIR/../crypto_temp
+mv $WORKDIR/* $WORKDIR/../crypto_temp
+mv $WORKDIR/../crypto_temp $WORKDIR/$P
+mkdir $WORKDIR/tmp
+mkdir $WORKDIR/pkg
