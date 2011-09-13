@@ -1,0 +1,24 @@
+--- noip-2.1.9/Makefile	2010-11-20 15:05:20 +0100
++++ noip-2.1.9/Makefile.mod	2010-11-20 15:02:46 +0100
+@@ -1,8 +1,8 @@
+ TGT=noip2
+-CC=gcc
++#CC=gcc
+ PKG=noip-2.1.tgz
+ 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ CONFDIR=${PREFIX}/etc
+ BINDIR=${PREFIX}/bin
+ 
+@@ -28,8 +28,8 @@
+ 	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi
+ 	if [ ! -d ${CONFDIR} ]; then mkdir -p ${CONFDIR};fi
+ 	cp ${TGT} ${BINDIR}/${TGT}
+-	${BINDIR}/${TGT} -C -c /tmp/no-ip2.conf
+-	mv /tmp/no-ip2.conf ${CONFDIR}/no-ip2.conf
++	#${BINDIR}/${TGT} -C -c /tmp/no-ip2.conf
++	#mv /tmp/no-ip2.conf ${CONFDIR}/no-ip2.conf
+ 
+ package: ${TGT}
+ 	rm  -f *.bak
