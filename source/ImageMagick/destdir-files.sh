@@ -1,0 +1,1 @@
+rm -rf $D/$CPREFIX/share/doc

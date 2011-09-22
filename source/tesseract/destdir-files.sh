@@ -1,0 +1,1 @@
+mv $WORKDIR/eng.traineddata $D/$CPREFIX/share/tessdata/

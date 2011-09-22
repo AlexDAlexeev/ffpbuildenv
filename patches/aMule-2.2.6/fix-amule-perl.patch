@@ -1,0 +1,8 @@
+--- amule-2.2.6/src/libs/ec/file_generator.pl.original	2010-12-23 01:07:14 +0100
++++ amule-2.2.6/src/libs/ec/file_generator.pl	2010-12-23 01:07:31 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/ffp/bin/perl
+ #
+ 
+ ## This file is part of the aMule Project

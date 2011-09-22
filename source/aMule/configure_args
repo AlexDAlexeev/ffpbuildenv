@@ -1,0 +1,2 @@
+--enable-geoip --disable-monolithic --with-toolkit=base --enable-amule-daemon  --enable-amulecmd --enable-webserver --enable-cas --enable-alcc --enable-optimize
+--disable-debug
