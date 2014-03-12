@@ -135,19 +135,19 @@ A=
 SRC_URI=
 [ -r "$X/SRC_URI" ] && eval SRC_URI=\"$(cat $X/SRC_URI)\"
 if [ -n "$SRC_URI" ]; then
-	for _uri in $SRC_URI; do
-		_f=$(basename $_uri)
+	while read -r _uri; do
+		_f=$(basename $(echo $_uri | sed -e 's@\s.*@@'))
 		if [ -n "$F_opt" ]; then
 			if [ ! -e "$DISTDIR/$_f" ]; then
 				[ -x "$CONFDIR/fetch.sh" ] || die "$CONFDIR/fetch.sh: Not found or not excutable"
 				info "* $_f: Fetch $_uri"
-				$CONFDIR/fetch.sh -d "$DISTDIR" "$_uri" || die "Could not fetch $(basename $_f)"
+				$CONFDIR/fetch.sh -d "$DISTDIR" \'"$_uri"\' || die "Could not fetch $(basename $_f)"
 			else
 				info "* $_f: found"
 			fi
 		fi
 		A="$A $_f"
-	done
+	done <<< $SRC_URI
 fi
 # If A is present, this has prioriy
 [ -r "$X/A" ] && eval A=\"$(cat $X/A)\"
@@ -250,6 +250,9 @@ for _f in $A; do
 				;;
 			*.tar.xz)
 				tar Jxf $f
+				;;
+			*.git)
+				git clone $f
 				;;
 			*)
 				die "$(basename $f): Don't know how to unpack"

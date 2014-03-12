@@ -52,9 +52,16 @@ fetch_wget()
 	eval $_cmd
 }
 
+fetch_git()
+{
+	_cmd="cd '$(dirname $2)'; git clone "$1" '$(basename $2)'"
+	echo "$_cmd"
+	eval $_cmd
+}
+
 fetch_svn()
 {
-	_cmd="cd '$(dirname $2)'; svn co '$1' '$(basename $2)'"
+	_cmd="cd '$(dirname $2)'; svn co "$1" '$(basename $2)'"
 	echo "$_cmd"
 	eval $_cmd
 }
@@ -72,7 +79,7 @@ fetch_cvs()
 while [ $# -gt 0 ]; do
 
 	uri="$1"
-	f=$(echo "$uri" | sed -e 's@.*/@@')
+	f=$(echo "$uri" | sed -e 's@.*/@@' | sed -e 's@\s.*@@')
 	shift
 
 	if [ -e "$D/$f" ]; then
@@ -83,6 +90,9 @@ while [ $# -gt 0 ]; do
 	case "$uri" in
 		http:* | https:* | ftp:*)
 			_cmd="fetch_wget"
+			;;
+		git:*)
+			_cmd="fetch_git"
 			;;
 		svn:*)
 			_cmd="fetch_svn"
@@ -96,7 +106,7 @@ while [ $# -gt 0 ]; do
 	esac
 	echo "* $f"
 	mkdir -p $D
-	eval $_cmd '$uri' '$D/$f' || die "Download of '$uri' failed"
+	eval $_cmd "'$uri'" '$D/$f' || die "Download of '$uri' failed"
 done
 
 
