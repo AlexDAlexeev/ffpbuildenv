@@ -1,0 +1,4 @@
+--prefix=$CPREFIX
+--disable-static
+--with-unrar=$CPREFIX/include/unrar
+--with-unrar-lib=$CPREFIX/lib
