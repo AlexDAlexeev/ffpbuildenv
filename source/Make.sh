@@ -17,6 +17,7 @@ usage()
 Usage: $(basename $0) [options] <directory>
 Options:
 	-F	Download distfiles and exit
+	-M	Only build
 	-T	Run testsuite
 EOF
     exit 0
@@ -69,10 +70,11 @@ exec 3>&1 1>/dev/null
 
 # defaults
 unset F_opt		# fetch distfiles, don't compile
+unset M_opt		# only compile
 unset T_opt		# run testsuite
 
 # parse options
-_opts=$(getopt FT "$@")
+_opts=$(getopt FTM "$@")
 eval set -- "$_opts"
 while true; do
 	case "$1" in
@@ -82,6 +84,10 @@ while true; do
 			;;
 		-T)
 			T_opt=1
+			shift
+			;;
+		-M)
+			M_opt=1
 			shift
 			;;
 		--)
@@ -172,7 +178,8 @@ set -xe
 
 
 # W cleanup
-rm -rf $WORKDIR
+[ ! -n "$M_opt" ] && rm -rf $WORKDIR
+rm -rf $D
 mkdir -p $WORKDIR
 
 
@@ -217,6 +224,7 @@ find_distfile()
 	done
 }
 
+if [ ! -n "$M_opt" ]; then
 for _f in $A; do
 	f=$(find_distfile "$_f")
 	if [ -d "$f" ]; then
@@ -256,7 +264,8 @@ if [ -r $X/unpack.sh ]; then
 	info "  unpack.sh ..."
 	cd $WORKDIR
 	. $X/unpack.sh
-fi	
+fi
+fi
 
 # check that we got $S directory
 [ -n "$A" ] && check_required_dirs $S
@@ -279,7 +288,8 @@ cat_prog()
             ;;
     esac
 }
-    
+
+if [ ! -n "$M_opt" ]; then    
 if [ -r $X/patch-series ]; then
     info "  patch-series ..."
     cd $S
@@ -307,9 +317,10 @@ for _f in $(ls $X/patch*.sh 2>/dev/null); do
 	cd $S
 	. $_f
 done
-
+fi
 
 # C configure
+if [ ! -n "$M_opt" ]; then
 configure_args=
 [ -r $X/configure_args ] && \
     eval configure_args=\"$(cat $X/configure_args | sed 's@#.*@@')\"
@@ -321,6 +332,7 @@ elif [ -x $S/configure ]; then
 	info "  configure ..."
 	cd $B
 	eval $S/configure $configure_args
+fi
 fi
 
 # M make
