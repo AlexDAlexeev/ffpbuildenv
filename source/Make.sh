@@ -298,6 +298,14 @@ if [ -r $X/patch-series ]; then
     done)
     eval "$_patch_series_cmd"
 fi
+
+if [ -r $S/configure.ac ] && [ ! -f $S/configure ]; then
+	#  automake project, but configure is missing
+	info "  autoreconf ..."
+	cd $S
+	eval autoreconf --install
+fi
+
 # use config.guess and config.sub from $CONFDIR
 cd $WORKDIR
 for _f in $(find . -name config.sub -o -name config.guess); do
