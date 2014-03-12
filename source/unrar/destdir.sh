@@ -1,2 +1,1 @@
-install -D -m 0755 unrar $D$CPREFIX/bin/unrar
-
+make DESTDIR=$D$CPREFIX install install-lib

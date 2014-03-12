@@ -1,0 +1,16 @@
+* Make all and install should also make the lib.
+--- unrar-5.0.14.orig/makefile  2013-04-29 22:27:05.000000000 +0800
++++ unrar-5.0.14/makefile   2014-01-11 16:09:08.000000000 +0800
+@@ -142,7 +142,11 @@
+ 			rm -f $(DESTDIR)/bin/unrar
+ 
+ install-lib:
+-		install libunrar.so $(DESTDIR)/lib
++	install -d $(DESTDIR)/lib                        
++	install -D libunrar.so $(DESTDIR)/lib/libunrar.so
++	install -d $(DESTDIR)/include/unrar              
++	install -D *.hpp $(DESTDIR)/include/unrar        
+ 
+ uninstall-lib:
+ 		rm -f $(DESTDIR)/lib/libunrar.so
++	rm -rf $(DESTDIR)/include/unrar
