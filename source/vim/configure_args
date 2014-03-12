@@ -1,0 +1,6 @@
+--prefix=$CPREFIX
+--disable-nls
+--enable-multibyte
+--without-x
+--disable-gui
+--with-features=huge
