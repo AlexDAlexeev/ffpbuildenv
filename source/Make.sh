@@ -120,7 +120,7 @@ PN=$(basename $1)
 eval PV=$(cat $X/PV)
 eval PR=$(cat $X/PR)
 P=${PN}-${PV}
-PF=${PN}-${PV}-${PR}
+PF=${PN}-${PV}-arm-${PR}
 
 FILESDIR=$X/files
 
