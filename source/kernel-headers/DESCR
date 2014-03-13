@@ -1,0 +1,5 @@
+Kernel-headers includes the C header files for the
+Linux kernel. The header files define structures
+and constants that are needed for building most
+standard programs and are also needed for rebuilding
+the kernel.
