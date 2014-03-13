@@ -1,0 +1,3 @@
+syslog_for_uClibc.patch
+implement_fstab_as_mntent.patch
+rpmatch_argz_from_gnulib.patch
