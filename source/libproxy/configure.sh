@@ -1,0 +1,2 @@
+mkdir -p $D/ffp
+cmake -DCMAKE_INSTALL_PREFIX=$CPREFIX -DWITH_PERL=no -DWITH_PYTHON=no
