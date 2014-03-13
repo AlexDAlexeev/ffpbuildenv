@@ -1,0 +1,6 @@
+MOUNT_FUSE_PATH=/ffp/sbin
+UDEV_RULES_PATH=/ffp/etc/udev/rules.d
+INIT_D_PATH=/ffp/etc/init.d
+LDFLAGS=-liconv
+--prefix=$CPREFIX
+--enable-shared --disable-static

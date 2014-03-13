@@ -1,0 +1,4 @@
+Filesystem in Userspace (FUSE) is an operating system
+mechanism for Unix-like computer operating systems that
+lets non-privileged users create their own file systems
+without editing kernel code.
