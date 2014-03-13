@@ -1,0 +1,11 @@
+--enable-mods-shared=most
+--enable-dav-lock
+--enable-ssl
+
+--exec-prefix=$CPREFIX
+--includedir=$CPREFIX/include/$PN
+--prefix=$CPREFIX/share/$PN
+--libexecdir=$CPREFIX/share/$PN/modules
+--mandir=$CPREFIX/share/man
+
+--enable-shared --disable-static
