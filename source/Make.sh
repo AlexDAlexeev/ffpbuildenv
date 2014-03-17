@@ -112,6 +112,9 @@ check_required_files $CONFDIR/makepkg.sh
 if [ -r "$CONFDIR/config.in" ]; then
 	. $CONFDIR/config.in
 fi
+if [ -r "$CONFDIR/scons.in" ]; then
+  . $CONFDIR/scons.in
+fi
 
 
 [ -r $1/PR ] || echo 1 >$1/PR
@@ -332,19 +335,22 @@ fi
 
 # C configure
 if [ ! -n "$M_opt" ]; then
-configure_args=
-[ -r $X/configure_args ] && \
-    eval configure_args=\"$(cat $X/configure_args | sed 's@#.*@@')\"
-if [ -r $X/configure.sh ]; then
-	info "  configure.sh ..."
-	cd $B
-	. $X/configure.sh
-elif [ -x $S/configure ]; then
-	info "  configure ..."
-	cd $B
-	eval $S/configure $configure_args
+	configure_args=
+	[ -r $X/configure_args ] && \
+	    eval configure_args=\"$(cat $X/configure_args | sed 's@#.*@@')\"
+	if [ -r $X/configure.sh ]; then
+		info "  configure.sh ..."
+		cd $B
+		. $X/configure.sh
+	elif [ -x $S/configure ]; then
+		info "  configure ..."
+		cd $B
+		eval $S/configure $configure_args
+	elif [ -r $B/SConstruct ]; then
+		configure_args=$scons_args
+	fi
 fi
-fi
+
 
 # M make
 if [ -r $X/make.sh ]; then
@@ -355,6 +361,10 @@ elif [ -r $B/Makefile -o -r $B/makefile ]; then
 	info "  make ..."
 	cd $B
 	make $make_args
+elif [ -r $B/SConstruct ]; then
+	info "  make (scons) ..."
+	cd $B
+	scons $configure_args
 fi
 
 # T testsuite
@@ -379,6 +389,10 @@ elif [ -r $B/Makefile -o -r $B/makefile ]; then
 	info "  destdir ..."
 	cd $B
 	make DESTDIR=$D install
+elif [ -r $B/SConstruct ]; then
+	info "  destdir (scons) ..."
+	cd $B
+	scons install --install-sandbox=$D
 fi
 # run additional destdir scripts
 for _f in $(find $CONFDIR -name destdir-\*.sh); do
