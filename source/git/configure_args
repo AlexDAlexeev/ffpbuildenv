@@ -1,0 +1,15 @@
+--prefix=$CPREFIX
+--disable-nls
+--with-openssl
+--with-curl
+--with-expat
+--with-iconv=$CPREFIX
+--with-gitconfig=$CREPFIX/etc/gitconfig
+--with-gitattributes=$CPREFIX/etc/gitattributes
+--with-pager=$CREPFIX/bin/less
+--with-editor=$CPREFIX/bin/vim
+--with-shell=$CPREFIX/bin/sh
+--with-perl=$CPREFIX/bin/perl
+--with-zlib=$CPREFIX
+--without-python
+--without-tcltk
