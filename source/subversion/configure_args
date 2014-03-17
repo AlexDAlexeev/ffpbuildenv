@@ -1,0 +1,4 @@
+--prefix=$CPREFIX
+--disable-static
+--with-ssl
+--with-serf
