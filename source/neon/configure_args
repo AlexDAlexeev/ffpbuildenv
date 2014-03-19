@@ -1,0 +1,5 @@
+--prefix=$CPREFIX
+--with-ssl
+--enable-threadsafe-ssl=posix
+--disable-static
+--enable-shared
