@@ -1,38 +1,28 @@
 --- fuse-2.7.3.orig/util/Makefile.am	2009-05-08 08:01:59.000000000 -0400
 +++ fuse-2.7.3/util/Makefile.am	2010-05-20 13:57:49.870623277 -0400
-@@ -16,11 +16,11 @@
+@@ -23,11 +23,6 @@
  install-exec-hook:
  	-chown root $(DESTDIR)$(bindir)/fusermount
  	-chmod u+s $(DESTDIR)$(bindir)/fusermount
 -	@if test ! -e $(DESTDIR)/dev/fuse; then \
--		$(mkdir_p) $(DESTDIR)/dev; \
+-		$(MKDIR_P) $(DESTDIR)/dev; \
 -		echo "mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true"; \
 -		mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true; \
 -	fi
-+#	@if test ! -e $(DESTDIR)/dev/fuse; then \
-+#		$(mkdir_p) $(DESTDIR)/dev; \
-+#		echo "mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true"; \
-+#		mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true; \
-+#	fi
  
  EXTRA_DIST = udev.rules init_script
  
 --- fuse-2.8.3.orig/util/Makefile.in	2010-02-01 09:41:47.000000000 -0500
 +++ fuse-2.8.3/util/Makefile.in	2010-05-20 13:58:38.783122876 -0400
-@@ -585,11 +585,11 @@
+@@ -677,11 +677,6 @@
  install-exec-hook:
  	-chown root $(DESTDIR)$(bindir)/fusermount
  	-chmod u+s $(DESTDIR)$(bindir)/fusermount
 -	@if test ! -e $(DESTDIR)/dev/fuse; then \
--		$(mkdir_p) $(DESTDIR)/dev; \
+-		$(MKDIR_P) $(DESTDIR)/dev; \
 -		echo "mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true"; \
 -		mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true; \
 -	fi
-+#	@if test ! -e $(DESTDIR)/dev/fuse; then \
-+#		$(mkdir_p) $(DESTDIR)/dev; \
-+#		echo "mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true"; \
-+#		mknod $(DESTDIR)/dev/fuse -m 0666 c 10 229 || true; \
-+#	fi
  
  install-exec-local:
  	$(mkdir_p) $(DESTDIR)$(MOUNT_FUSE_PATH)

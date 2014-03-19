@@ -3,4 +3,5 @@ UDEV_RULES_PATH=/ffp/etc/udev/rules.d
 INIT_D_PATH=/ffp/etc/init.d
 LDFLAGS=-liconv
 --prefix=$CPREFIX
---enable-shared --disable-static
+--enable-shared
+--disable-static
