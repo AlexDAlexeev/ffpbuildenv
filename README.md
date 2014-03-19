@@ -1,5 +1,5 @@
 # ffpbuildenv
-Copied from http://nas-tweaks.net/106/compiling-software-for-the-fonz-fun_plug/
+Originally copied from http://nas-tweaks.net/106/compiling-software-for-the-fonz-fun_plug/
 
 Fonz provides many pre-compiled packages for the NAS in his repository, but obviously cannot provide every package which someone out there might need. So to help users compile and link packages themselves, Fonz has created a complete software environment for building packages for the NAS device.
 
@@ -68,7 +68,7 @@ http://www.lighttpd.net/download/lighttpd-$PV.tar.bz2
 This will result in http://www.lighttpd.net/download/lighttpd-1.4.20.tar.bz2
 
 ### Optional files
-#### DESC
+#### DESCR
 Describes the package. If present, it is shown during installation.
 ```
 Lighttpd is a secure, speedy, compliant, and very flexible web-server
@@ -84,6 +84,36 @@ Lighttpd is a secure, speedy, compliant, and very flexible web-server
 This is the general homepage of the program.
 ```
 http://www.lighttpd.net/
+```
+
+#### A
+List of source archives, defaults to the downloaded file name(s).
+
+#### S
+Source directory (e.g. the name of the source package if it is different from the default value).
+
+#### B
+Build directory. Defaults to the source directory.
+
+#### configure.sh
+This file is used for configuring the source code with other commands than ./configure. If it is not available ./configure with the optional configure_args (see below) will be run in the source directory.
+
+This file is not needed in lighttpd, the code below is from openssl
+```
+    ./config \
+        --prefix=$CPREFIX \
+        --openssldir=$CSYSCONFDIR/ssl \
+        zlib shared
+```
+
+#### configure_args
+These arguments are used, if there is no configure.sh available in the directory. Options can be given on new lines. Only the part after ./configure is included!
+```
+--libdir=$CPREFIX/lib/$P
+--program-prefix=""
+--with-openssl
+--with-pcre
+--with-zlib
 ```
 
 #### doinst.sh
@@ -103,30 +133,7 @@ def()
 def ffp/etc/sudoers
 ```
 
-#### configure.sh
-This file is used for configuring the source code with other commands than ./configure. If it is not available ./configure with the optional configure_args (see below) will be run in the source directory.
-
-This file is not needed in lighttpd, the code below is from openssl
-```
-    ./config \
-        --prefix=$CPREFIX \
-        --openssldir=$CSYSCONFDIR/ssl \
-        zlib shared
-```
-
-#### configure_args
-These arguments are used, if there is no configure.sh available in the directory. Only the part after ./configure is included!
-```
---libdir=$CPREFIX/lib/$P
---program-prefix=""
---with-openssl
---with-pcre
---with-zlib
-```
-
 #### destdir.sh
-Optional
-
 This file is used for “make” on the source code. If it is not available,
 ```
 make DESTDIR=$D install
