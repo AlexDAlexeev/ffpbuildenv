@@ -1,0 +1,3 @@
+libiconv - character set conversion library
+
+This library provides an iconv() implementation.
