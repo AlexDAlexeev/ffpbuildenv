@@ -1,0 +1,5 @@
+apr_cv_sock_cloexec=no
+--prefix=$CPREFIX
+--disable-static
+--with-installbuilddir=$CPREFIX/lib/apr-${PV}/build-${PV%%.*}
+--with-devrandom=/dev/urandom
