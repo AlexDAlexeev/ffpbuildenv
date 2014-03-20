@@ -1,0 +1,11 @@
+--- mdadm-3.3.orig/Makefile	2014-03-20 21:05:12.000000000 +0800
++++ mdadm-3.3/Makefile	2014-03-20 21:06:17.000000000 +0800
+@@ -43,7 +43,7 @@
+ 
+ CC = $(CROSS_COMPILE)gcc
+ CXFLAGS ?= -ggdb
+-CWFLAGS = -Wall -Werror -Wstrict-prototypes -Wextra -Wno-unused-parameter
++CWFLAGS = -Wall -Wstrict-prototypes -Wextra -Wno-unused-parameter
+ ifdef WARN_UNUSED
+ CWFLAGS += -Wp,-D_FORTIFY_SOURCE=2 -O3
+ endif
