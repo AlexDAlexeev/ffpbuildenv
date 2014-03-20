@@ -219,7 +219,7 @@ cd $WORKDIR
 find_distfile()
 {
 	check_required_dirs $DISTDIR
-	for _ext in .tar.bz2 .tar.gz .tar.xz .tgz .tar ""; do
+	for _ext in .tar.bz2 .tar.gz .tar.xz .tgz .txz .tar ""; do
 		if [ -r "$DISTDIR/$1$_ext" ]; then
 			echo "$DISTDIR/$1$_ext"
 			break
@@ -251,7 +251,7 @@ for _f in $A; do
 			*.gz)
 				gzip -cd $f > $(gzip -lN $f | tail -n 1| basename $(awk '{print $4}'))	
 				;;
-			*.tar.xz)
+			*.tar.xz | *.txz)
 				tar Jxf $f
 				;;
 			*.git)
