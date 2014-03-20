@@ -436,6 +436,7 @@ fi
 # P package
 info "  package ..."
 cd $D
+[ -r $X/DESCR ] && install -D -m 0644 "$X/DESCR" "$D/install/DESCR"
 [ -x $CONFDIR/makepkg.sh ] && $CONFDIR/makepkg.sh $PKGDIR/$PF
 
 # make PKG_TAGS links
