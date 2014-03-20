@@ -95,6 +95,9 @@ Source directory (e.g. the name of the source package if it is different from th
 #### B
 Build directory. Defaults to the source directory.
 
+#### patch-series and patch-*.sh
+Sometimes the source will not compile on its own, or needs changes for arm. You can specify each of the patch files you want applied from the *patches/$PN-$PV/* directory. The package version must exactly. If this is not enough, any patch-*.sh file in the source dir will be executed as a shell script.
+
 #### configure.sh
 This file is used for configuring the source code with other commands than ./configure. If it is not available ./configure with the optional configure_args (see below) will be run in the source directory.
 
