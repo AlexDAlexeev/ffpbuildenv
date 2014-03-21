@@ -8,4 +8,5 @@
 --libexecdir=$CPREFIX/share/$PN/modules
 --mandir=$CPREFIX/share/man
 
---enable-shared --disable-static
+--enable-shared
+--disable-static
