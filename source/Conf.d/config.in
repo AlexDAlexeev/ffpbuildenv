@@ -2,9 +2,9 @@
 
 # versions
 BINUTILS_VER=2.18.50.0.1
-GCC_VER=4.1
-LINUX_VER=2.6.9.1
-UCLIBC_VER=0.9.29
+GCC_VER=4.5.3
+LINUX_VER=2.6.35.14
+UCLIBC_VER=0.9.32
 
 # system config
 CTARGET=arm-unknown-linux-uclibc
