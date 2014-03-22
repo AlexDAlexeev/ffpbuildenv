@@ -3,4 +3,4 @@ of files (usually source code), keep a log of who, when, and why
 changes occurred, etc., like RCS or SCCS.  It handles multiple
 developers, multiple directories, triggers to enable/log/control
 various operations, and can work over a wide area network.
-[pkgsrc]
+

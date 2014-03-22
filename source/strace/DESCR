@@ -5,4 +5,4 @@ are called by a process.  The name of each system call, its arguments
 and its return value are reported.
 
 This version of strace is maintained by Wichert Akkerman.
-[pkgsrc]
+

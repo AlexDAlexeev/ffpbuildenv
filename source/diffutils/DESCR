@@ -19,4 +19,4 @@ the two changed versions, and can produce a merged file that contains
 both persons' changes together with warnings about conflicts.
 
    You can use the `sdiff' command to merge two files interactively.
-[pkgsrc]
+

@@ -12,4 +12,4 @@ that are (regrettably) absent from other unices. This port has been
 best tested on Linux, Solaris, HPUX, NetBSD and Irix. Support for AIX,
 SCO, NeXT and other Unices is underway. This version actively tracks
 changes in the OpenBSD CVS repository.
-[pkgsrc]
+

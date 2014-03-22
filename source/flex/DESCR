@@ -8,4 +8,4 @@ This file is compiled and linked with the -lfl library to produce an
 executable.  When the executable is run, it analyzes its input for
 occurrences of the regular expressions.  Whenever it finds one, it
 executes the corresponding C code.
-[pkgsrc]
+

@@ -8,4 +8,4 @@ command history, job control, shell functions and aliases, indexed
 arrays of unlimited size, and integer arithmetic in any base from two
 to sixty-four. In addition, most sh scripts can be run by Bash without
 modification.
-[pkgsrc]
+

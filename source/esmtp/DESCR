@@ -12,4 +12,4 @@ Features include:
   * individual user configuration,
   * does not receive mail, expand aliases or manage a queue,
   * local mail delivery via a MDA.
-[pkgsrc]
+

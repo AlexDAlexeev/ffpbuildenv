@@ -3,4 +3,4 @@ is thread safe.  The data format used by the library is described
 by RFCs (Request for Comments) 1950 to 1952.
 
 Questions about zlib should be sent to <zlib@quest.jpl.nasa.gov>.
-[pkgsrc]
+

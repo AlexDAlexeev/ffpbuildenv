@@ -20,4 +20,4 @@ several advantages for testing:
           are usually written in expect using Tcl.
 
   Bugs can be reported to bug-dejagnu@gnu.org.
-[pkgsrc]
+

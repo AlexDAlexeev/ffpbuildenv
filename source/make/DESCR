@@ -8,4 +8,4 @@ should write a makefile for it, so that it is possible to use Make
 to build and install the program.
 
 This is the GNU version of make.
-[pkgsrc]
+

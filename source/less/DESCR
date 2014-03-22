@@ -12,4 +12,4 @@ This package also includes the lessecho command which can expand
 metacharacters, such as * and ?, in filenames.
 
 This version of less was written by and is maintained by Mark Nudelman.
-[pkgsrc]
+

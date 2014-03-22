@@ -9,4 +9,4 @@ archive indexes, size for listing section sizes of object files,
 strings for outputing the printable characters in files, strip for
 stripping out symbols (like debugging information) from object files,
 and other tools.
-[pkgsrc]
+

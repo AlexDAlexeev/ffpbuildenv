@@ -6,4 +6,4 @@ input and performs some operation (or set of operations) on it and
 outputs the modified text. Sed is typically used for extracting part
 of a file using pattern matching or substituting multiple occurrences
 of a string within a file.
-[pkgsrc]
+

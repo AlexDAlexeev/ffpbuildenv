@@ -6,4 +6,4 @@ allows machines with DHCP-allocated addresses to appear in the DNS
 with names configured either in each host or in a central
 configuration file.  Dnsmasq supports static and dynamic DHCP leases
 and BOOTP for network booting of diskless machines.
-[pkgsrc]
+

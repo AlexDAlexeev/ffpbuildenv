@@ -3,4 +3,4 @@ or display messages using dialog boxes from a shell script. Currently,
 these types of dialog boxes are implemented:
 yes/no box, menu box, input box, message box, text box, info box,
 guage box, checklist box, and radiolist box.
-[pkgsrc]
+

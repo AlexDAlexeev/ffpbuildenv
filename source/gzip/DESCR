@@ -5,4 +5,4 @@ This program was developed as a replacement for compress because of the UNISYS
 and IBM patents covering the LZW algorithm used by compress.  These patents
 made it impossible for us to use compress, and we needed a replacement.  The
 superior compression ratio of GZIP is just a bonus.
-[pkgsrc]
+
