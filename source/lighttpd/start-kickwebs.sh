@@ -14,7 +14,7 @@ kickwebs_start()
 	if [[ $(pidof webs) -gt 0 ]]; then
 		echo "Kicking webs ..."
 		kill -9 `pidof webs`
-        fi
+    fi
 }
 
 run_rc_command "$1"

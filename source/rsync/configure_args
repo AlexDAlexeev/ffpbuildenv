@@ -2,4 +2,4 @@
 --disable-nls
 --disable-debug
 --disable-locale
---with-rsyncd-conf=$CPREFIX/etc/rsyncd.conf
+--with-rsyncd-conf=$CSYSCONFDIR/rsyncd.conf

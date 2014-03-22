@@ -1,1 +1,4 @@
---sysconfdir=${CPREFIX}/etc
+--sysconfdir=$CSYSCONFDIR
+--without-insults
+--without-lecture
+

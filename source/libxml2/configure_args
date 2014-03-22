@@ -1,4 +1,1 @@
 --without-python
---prefix=$CPREFIX
---enable-shared
---disable-static

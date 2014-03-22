@@ -1,0 +1,4 @@
+--with-perl=/ffp/bin/perl
+--without-x
+--without-fontconfig
+--with-modules
