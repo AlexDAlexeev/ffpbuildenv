@@ -5,5 +5,4 @@
 --with-tcp-wrappers
 --with-mantype=man
 --with-default-path=/ffp/bin:/usr/sbin:/sbin:/usr/bin:/bin
---with-ipv4-default
 ac_cv_path_NROFF=$(which nroff)
