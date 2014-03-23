@@ -1,0 +1,20 @@
+--- openssl-1.0.1f/Makefile	2014-01-06 21:47:42.000000000 +0800
++++ openssl-1.0.1f/Makefile	2014-03-20 07:52:25.000000000 +0800
+@@ -646,7 +646,7 @@
+ 	if [ "$(PLATFORM)" = "DJGPP" -o "$(PLATFORM)" = "Cygwin" -o "$(PLATFORM)" = "mingw" ]; then \
+ 		filecase=-i; \
+ 	fi; \
+-	set -e; for i in doc/apps/*.pod; do \
++	for i in doc/apps/*.pod; do \
+ 		fn=`basename $$i .pod`; \
+ 		sec=`$(PERL) util/extract-section.pl 1 < $$i`; \
+ 		echo "installing man$$sec/$$fn.$${sec}$(MANSUFFIX)"; \
+@@ -663,7 +663,7 @@
+ 				PLATFORM=$(PLATFORM) $$here/util/point.sh $$fn.$${sec}$(MANSUFFIX) "$$n".$${sec}$(MANSUFFIX); \
+ 			 done); \
+ 	done; \
+-	set -e; for i in doc/crypto/*.pod doc/ssl/*.pod; do \
++	for i in doc/crypto/*.pod doc/ssl/*.pod; do \
+ 		fn=`basename $$i .pod`; \
+ 		sec=`$(PERL) util/extract-section.pl 3 < $$i`; \
+ 		echo "installing man$$sec/$$fn.$${sec}$(MANSUFFIX)"; \
