@@ -1,0 +1,24 @@
+body {
+        padding-left: 0em 1em 0em 1em;
+        background-color: white;
+        color: black;
+        font-family: monospace;
+}
+.index, .pkg, a {
+        background-color: #eeeeee;
+}
+.index {
+        float: right;
+        padding: 0em 1em 0em 1em;
+}
+.index a {
+        display: block;
+        text-decoration: none;
+}
+.packages {
+        width: 65%;
+        padding: 3px;
+}
+.index, .pkg {
+        margin: 1em;
+}
