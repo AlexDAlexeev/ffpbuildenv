@@ -1,0 +1,1 @@
+make LIBS_EXTRA=-lintl LDFLAGS_USER="$LDFLAGS"
