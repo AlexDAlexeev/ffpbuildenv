@@ -28,7 +28,7 @@ for d in `ls -d $D/*/`; do
 	PACKAGE_NAMES="$PACKAGE_NAMES\n"`sed -e "s/__PACKAGE_NAME__/$PACKAGE_NAME/g" $N`
 	PACKAGES="$PACKAGES$H"
 		
-	#echoerr "add package $PACKAGE_NAME..."
+	echoerr "$PACKAGE_NAME  $FILENAME"
 done
 
 sed -e '/__PACKAGE_CSS__/{r '$C''$'\n''d;}' \
