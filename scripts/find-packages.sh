@@ -29,17 +29,18 @@ check_file()
 }
 while [ $# -gt 0 ]; do
 
-    # PN-PV-PR.tgz
-    # PN-PV-PR
-    # PN-PV
-    # PN
+    # PN-PV-arm-PR.t[gx]z
+    # PN-PV-PR.t[gx]z
+    # PN-PV-PR.t[gx]z
+    # PN-PV.t[gx]z
+    # PN.t[gx]z
 
     check_file "$1" || \
-        check_file "$1.tgz" || \
-        check_file "$1-*.tgz" "^$1-[^-]+\.tgz" || \
-        check_file "$1-*.tgz" "^$1-[^-]+-[^-]+\.tgz" || \
-        check_file "$1-*.tgz" "^$1-[^-]+-arm-[^-]+\.tgz" || \
-        echo "MISSING"
+    check_file "$1.t[gx]z" || \
+    check_file "$1-*.t[gx]z" "^$1-[^-]+\.t[gx]z" || \
+    check_file "$1-*.t[gx]z" "^$1-[^-]+-[^-]+\.t[gx]z" || \
+    check_file "$1-*.t[gx]z" "^$1-[^-]+-arm-[^-]+\.t[gx]z" || \
+    echo "MISSING"
 
     shift 1
 done

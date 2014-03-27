@@ -5,7 +5,7 @@ M=MANIFEST.txt
 rm -f $M
 >$M
 
-for f in *.tgz; do
+for f in *.t[gx]z; do
 
     echo $f
 
@@ -17,6 +17,13 @@ for f in *.tgz; do
 ++========================================
 EOF
 
-    tar tzvf $f >>$M
+    case "$f" in
+      *tgz )
+        tar tzvf $f >>$M
+        ;;
+      *txz )
+        tar tJvf $f >>$M
+        ;;
+    esac
 done
 
