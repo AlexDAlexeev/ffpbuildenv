@@ -1,0 +1,7 @@
+When you install fun_plug in your DNS-323 or CH3SNAS box,
+it runs most of the programs from the mounted hard disks, so
+it prevents them from being unmounted cleanly.
+
+Cleanboot will modify the reboot & shutdown process to
+overcome this issue, allowing you to cleanly reboot or shutdown
+your box.
